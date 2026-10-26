@@ -501,7 +501,7 @@ function showToast(msg) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => t.classList.remove("show"), 4500);
 }
-setTimeout(() => showToast("New quest: Get to know Gerald. Talk to 6 people around the barangay."), 2000);
+setTimeout(() => showToast("New quest: Get to know Gerald. Talk to six people around the barangay."), 2000);
 
 // HUD hint + skills card
 function updateHUD() {
