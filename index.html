@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title> Get to know Me</title>
+  <meta name="description" content="A tiny retro RPG barangay. Walk around and talk to the neighbors to get to know Gerald Mandaue." />
+  <meta property="og:title" content="Barangay Gerald" />
+  <meta property="og:description" content="Walk around a pixel barangay and get to know Gerald Mandaue." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- The whole game is drawn on this canvas -->
+  <canvas id="game"></canvas>
+
+  <!-- HUD top left: photo + name -->
+  <div id="hud-left" class="panel">
+    <div id="photo-box"><span id="photo-placeholder">G</span></div>
+    <div class="hud-text">ABOUT:<br />GERALD MANDAUE</div>
+  </div>
+
+  <!-- HUD top right: quest tracker + mute -->
+  <div id="hud-right">
+    <div id="quest" class="panel">QUEST: Get to know Gerald <span id="quest-count">0/6</span></div>
+    <button id="mute" class="btn" aria-label="Mute sound">SOUND: ON</button>
+  </div>
+
+  <div id="plus-one">+1</div>
+  <div id="toast" class="panel"></div>
+  <div id="hint" class="panel">Press E to talk</div>
+
+  <!-- Skills sign card -->
+  <div id="skills" class="panel">
+    <div class="title">SIGNBOARD</div>
+    <p>Gerald's skills: HTML, CSS, JavaScript</p>
+    <p class="small">This whole barangay runs on just those three.</p>
+  </div>
+
+  <!-- Dialogue box -->
+  <div id="dialogue" class="panel">
+    <div id="dlg-name"></div>
+    <div id="dlg-text"></div>
+    <div id="dlg-next">▼</div>
+  </div>
+
+  <!-- Touch controls (only shown on phones / tablets) -->
+  <div id="touch">
+    <div id="dpad">
+      <button class="tbtn" data-key="up" style="grid-area:up" aria-label="Up">▲</button>
+      <button class="tbtn" data-key="left" style="grid-area:left" aria-label="Left">◀</button>
+      <button class="tbtn" data-key="right" style="grid-area:right" aria-label="Right">▶</button>
+      <button class="tbtn" data-key="down" style="grid-area:down" aria-label="Down">▼</button>
+    </div>
+    <button id="abtn" class="tbtn" aria-label="Action">A</button>
+  </div>
+
+  <!-- Quest complete screen -->
+  <div id="complete">
+    <div class="panel complete-box">
+      <h1>QUEST COMPLETE</h1>
+      <p>Okay, kilala mo na si Gerald. Salamat sa pagdaan sa barangay!</p>
+      <button id="again" class="btn">WALK AROUND AGAIN</button>
+    </div>
+  </div>
+  <div id="confetti"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
